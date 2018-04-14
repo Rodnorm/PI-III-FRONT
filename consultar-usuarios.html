@@ -10,51 +10,6 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 	<style>
-#custom-search-input{
-   
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button{
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 18px;
-}.custab{
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin: 5% 0;
-    box-shadow: 3px 3px 2px #ccc;
-    transition: 0.5s;
-    }
-.custab:hover{
-    box-shadow: 3px 3px 0px transparent;
-    transition: 0.5s;
-		}#tabela{
-	
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-        align-items: center
-		}
 	</style>
 
 <body>
@@ -114,7 +69,7 @@
 					<br>
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro de Usuários</h3>
+							<h3 class="panel-title">Consultar Usuários</h3>
 						</div>
 								<div class="panel-body">
 									<form role="form">
@@ -173,26 +128,29 @@
 
 										</div>
 											
-										<div class="container" id="tabela">
-											<div class="row col-xs-auto col-sm-auto col-md-6">
+										
+										<div class="row">
+											<div class="col-xs-auto col-sm-auto col-md-auto">
 												<table class="table table-striped custab">
-												<thead>
-													<tr>
-														<th>Nome</th>
-														<th>Departamento</th>
-														<th>Cargo</th>
-														<th>Filial</th>
-														<th>Login</th>
-														<th class="text-center">Opções</th>
-													</tr>
-												</thead>
+													<thead>
+														<tr>
+															<th>Nome</th>
+															<th>Departamento</th>
+															<th>Cargo</th>
+															<th>Filial</th>
+															<th>Login</th>
+															<th class="text-center">Opções</th>
+														</tr>
+													</thead>
 														<tr>
 															<td>João</td>
 															<td>Vendas</td>
 															<td>Vendedor</td>
 															<td>Porto Alegre</td>
 															<td>Jão_</td>
-															<td class="text-center"><a class="btn btn-info btn-xs" href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Deletar</a></td>
+																<td class="text-center"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Editar</button>
+																	<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#removerModal">Deletar</button>
+																</td>
 														</tr>
 														<tr>
 															<td>Kátia</td>
@@ -200,21 +158,26 @@
 															<td>Suporte Técnico</td>
 															<td>São Paulo</td>
 															<td>k.macedo</td>
-															<td class="text-center"><a class="btn btn-info btn-xs" href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Deletar</a></td>
+															<td class="text-center"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Editar</button>
+																	<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#removerModal">Deletar</button>
+															</td>	
 														</tr>
 														<tr>
 															<td>Carla</td>
-															<td>Diretoria</td>
-															<td>Diretora</td>
-															<td>Recife</td>
-															<td>Car.la</td>
-															<td class="text-center"><a class="btn btn-info btn-xs" href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Deletar</a></td>
+																<td>Diretoria</td>
+																<td>Diretora</td>
+																<td>Recife</td>
+																<td>Car.la</td>
+																<td class="text-center">
+
+																	<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Editar</button>
+																	<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#removerModal">Deletar</button>
+																</td>
 														</tr>
-												</table>
+													</table>
+												
+													</div>
 												</div>
-										
-										</div>
-										
 									</form>
 								</div>
 						</div>
@@ -222,7 +185,143 @@
 						
 				</div>	
 			</div>
-		</div>	
+		
+			<div id="myModal" class="modal fade" role="dialog">
+  		<div class="modal-dialog">
+		
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Dados do Usuário</h4>
+			  </div>
+			  <div class="modal-body">
+				
+									<form role="form">
+										<div class="row">
+											<div class="col-xs-auto col-sm-auto col-md-6">
+												<label for="Nome" class="control-label">Nome*</label>
+												<input type="text" name="Nome" id="Nome" class="form-control input-sm" placeholder="Nome Completo">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<div class="form-group">
+													<div class="col-25">
+														<label class="control-label" for="AlteraCategoria">Grupo/Filial*</label>
+													</div>	
+													 <select id="AlteraCategoria" name="AlteraCategoria" class="form-control">
+														<option value="1">Selecione</option>
+														<option value="2">São Paulo</option>
+														<option value="3">Porto Alegre</option>
+														<option value="4">Recife</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<div class="form-group">
+													<div class="col-25">
+														<label class="control-label" for="AlteraDepartamento">Departamento*</label>
+													</div>	
+													 <select id="AlteraDepartamento" name="AlteraDepartamento" class="form-control">
+														<option value="1">Selecione</option>
+														<option value="2">Diretoria</option>
+														<option value="3">Administrativo</option>
+														<option value="4">Vendas</option>
+														<option value="5">TI</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<div class="form-group">
+													<div class="col-25">
+														<label class="control-label" for="AlteraCargo">Cargo*</label>
+													</div>	
+													 <select id="AlteraCargo" name="AlteraCargo" class="form-control">
+														<option value="1">Selecione</option> 
+														<option value="2">Diretor(a)</option>
+														<option value="3">Gerente</option>
+														<option value="4">BackOffice</option>
+														<option value="5">Vendedor(a)</option>
+														<option value="6">Suporte Técnico</option>
+													</select>
+												</div>
+											</div>
+										
+										</div>
+										
+										<div class="row">
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<br>
+												<h3 class="panel-title">Dados de Acesso </h3>
+												<hr>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<label for="AlteraLogin" class="control-label">Login*</label>
+												<input type="text" name="AlteraLogin" id="AlteraLogin" class="form-control input-sm" placeholder="Login">
+											</div>
+										
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<label for="AlteraSenha" class="control-label">Senha*</label>
+												<input type="password" name="AlteraSenha" id="AlteraSenha" class="form-control input-sm" placeholder="Entre 8 e 25 dígitos">
+											</div>
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<label for="AlteraConfirmar" class="control-label">Confirmar Senha*</label>
+												<input type="password" name="AlteraConfirmar" id="AlteraConfirmar" class="form-control input-sm">
+											</div>
+										</div>
+										
+										<div class="row">
+											<br>
+											<div class="col-xs-10 col-sm-10 col-md-10">
+												<button type="button" class="btn btn-info" >Salvar</button>
+											</div>
+										</div>
+										
+									</form>
+						
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+			  </div>
+			</div>
 	
-</body>
+		</div>
+	</div><!--MODAL-EDITAR-->
+	
+			<div id="removerModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Confirmar exclusão</h4>
+						</div>
+						<div class="modal-body">
+							<p>Deseja realmente excluir o usuário e todas as suas informações?</p>
+							 <button type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+							 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						</div>
+
+					</div>
+
+			</div>
+		</div><!--CONFIRMAR-EXCLUSÃO-->
+		</div> <!-- MAIN -->
+	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
