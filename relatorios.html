@@ -6,9 +6,27 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>	
 	<link rel="stylesheet" href="css/styles.css">
-</head>
+	
+	<script>
+		$(document).ready(function(){
+		 $("#datepicker").datepicker({
+        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        dateFormat: 'dd/mm/yy',
+        nextText: 'Próximo',
+        prevText: 'Anterior'
+    });
 
+		});
+	</script>
+</head>
+	
 <body>
 	<nav class="navbar navbar-inverse sidebar" role="navigation">
 			<div class="container-fluid">
@@ -56,5 +74,73 @@
 				</div>
 			</div>
 		</nav> <!--MENU-->
+	
+	
+		<div class="main">
+			<div class="container">
+      			<div class="row centered-form">
+					<div >
+					<br>
+					<br>
+					<br>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Consulta de Relatórios</h3>
+							</div>
+							<div class="panel-body">
+									<form role="form">
+										<div class="row">
+											<div class="col-xs-auto col-sm-auto col-md-4">
+												<h3 class="panel-title">Filtrar busca</h3>
+											</div>
+											<hr>
+										</div>	
+											<div class="row">
+												<div class="col-xs-auto col-sm-auto col-md-3">
+													<label for="datepicker_1" class="control-label">De</label>
+													<input class="form-control" id="datepicker_1" name="datepicker_1" placeholder="DD/MM/AAAA" type="text"/>
+													
+												</div>
+												<div class="col-xs-auto col-sm-auto col-md-3">
+													<label for="datepicker_2" class="control-label">Até</label>
+													<input class="form-control" id="datepicker_2" name="datepicker_2" placeholder="DD/MM/AAAA" type="text"/>
+												</div>
+											</div>
+									</form>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+<script>
+	 
+	$(document).ready(function(){
+      var date_input=$('input[name="datepicker_1"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+		
+    });
+	$(document).ready(function(){
+      var date_input=$('input[name="datepicker_2"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    });
+	
+</script>
+	
+	
 </body>
 </html>
