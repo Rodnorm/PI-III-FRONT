@@ -6,25 +6,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+   	
+    <script type="text/javascript" src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
 	<link rel="stylesheet" href="css/styles.css">
 	
-	<script>
-		$(document).ready(function(){
-		 $("#datepicker").datepicker({
-        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
-        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
-        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
-        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
-        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-        dateFormat: 'dd/mm/yy',
-        nextText: 'Próximo',
-        prevText: 'Anterior'
-    });
 
-		});
-	</script>
 </head>
 	
 <body>
@@ -96,15 +87,28 @@
 											<hr>
 										</div>	
 											<div class="row">
-												<div class="col-xs-auto col-sm-auto col-md-3">
-													<label for="datepicker_1" class="control-label">De</label>
-													<input class="form-control" id="datepicker_1" name="datepicker_1" placeholder="DD/MM/AAAA" type="text"/>
-													
-												</div>
-												<div class="col-xs-auto col-sm-auto col-md-3">
-													<label for="datepicker_2" class="control-label">Até</label>
-													<input class="form-control" id="datepicker_2" name="datepicker_2" placeholder="DD/MM/AAAA" type="text"/>
-												</div>
+												<div class="col-sm-6" style="width:295px;">
+													<div class="form-group">
+														<label for="datetimepicker_de" class="control-label">De</label>
+														<div class="input-group date" id="datetimepicker_de">
+															<input type="text" class="form-control"/>
+															<span class="input-group-addon">
+																<span class="glyphicon glyphicon-calendar"></span>
+															</span>
+														</div>
+													</div>
+												</div>	
+												<div class="col-sm-6" style="width:295px;">
+													<div class="form-group">
+														<label for="datetimepicker_ate" class="control-label">Até</label>
+														<div class="input-group date" id="datetimepicker_ate">
+															<input type="text" class="form-control"/>
+															<span class="input-group-addon">
+																<span class="glyphicon glyphicon-calendar"></span>
+															</span>
+														</div>
+													</div>
+												</div>	
 											</div>
 									</form>
 							</div>
@@ -113,34 +117,23 @@
 				</div>
 			</div>
 		</div>
-<script>
-	 
-	$(document).ready(function(){
-      var date_input=$('input[name="datepicker_1"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-		
-    });
-	$(document).ready(function(){
-      var date_input=$('input[name="datepicker_2"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-    });
 	
-</script>
 	
+
+	
+	 <script type="text/javascript">
+            $(function () {
+                $("#datetimepicker_de").datetimepicker({
+                    defaultDate: "01/01/2018",
+                    locale: "pt-br",
+                });
+				$("#datetimepicker_ate").datetimepicker({
+                    defaultDate: "12/12/2018",
+                    locale: "pt-br",
+                });
+				
+            });
+            </script>
 	
 </body>
 </html>
