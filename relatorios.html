@@ -87,9 +87,9 @@
 											<hr>
 										</div>	
 											<div class="row">
-												<div class="col-sm-6" style="width:295px;">
+												<div class="col-sm-3">
 													<div class="form-group">
-														<label for="datetimepicker_de" class="control-label">De</label>
+														<label for="datetimepicker_de" class="control-label">Data inicial</label>
 														<div class="input-group date" id="datetimepicker_de">
 															<input type="text" class="form-control"/>
 															<span class="input-group-addon">
@@ -98,18 +98,98 @@
 														</div>
 													</div>
 												</div>	
-												<div class="col-sm-6" style="width:295px;">
+												<div class="col-sm-3">
 													<div class="form-group">
-														<label for="datetimepicker_ate" class="control-label">Até</label>
+														<label for="datetimepicker_ate" class="control-label">Data final</label>
 														<div class="input-group date" id="datetimepicker_ate">
 															<input type="text" class="form-control"/>
 															<span class="input-group-addon">
 																<span class="glyphicon glyphicon-calendar"></span>
 															</span>
+															<span class="input-group-btn">
+																<button class="btn btn-info" type="button" id="buttonData">
+																	<span class="glyphicon glyphicon-search"></span>
+																</button>
+															</span>
 														</div>
+														
 													</div>
-												</div>	
+												</div>
+												<div class="col-sm-2">
+													<label class="control-label" for="filtro"> Filtrar busca </label>
+													<div>
+														<select id="filtro" name="filtro" class="form-control">
+															<option>Selecione</option>
+															<option>Venda</option>
+															<option>Locação</option>
+														</select>
+													</div> 
+												</div>
+												<div class="col-sm-4">
+													<label class="control-label" > <br> </label>
+													<div class="input-group">
+													  <input type="text" class="form-control" placeholder="digite o número do contrato...">
+													  <span class="input-group-btn">
+														<button class="btn btn-info" type="button" id="buttonNumeroContrato"><span class="glyphicon glyphicon-search"></span>
+														  </button>
+													  </span>
+													</div>
+													
+												</div>
 											</div>
+											<div class="row">
+											<div class="col-xs-auto col-sm-auto col-md-auto">
+												<table class="table table-striped custab">
+													<thead>
+														<tr>
+															<th>Data</th>
+															<th>Nº contrato</th>
+															<th>Contrato</th>
+															<th>Locatário</th>
+															<th>Imóvel</th>
+															<th>Cód. Ref</th>
+															<th class="text-center">Opções</th>
+														</tr>
+													</thead>
+														<tr>
+															<td>João</td>
+															<td>Vendas</td>
+															<td>Vendedor</td>
+															<td>Porto Alegre</td>
+															<td>Jão_</td>
+															<td>001</td>
+																<td class="text-center"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">PDF</button>
+																	<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#removerModal">Excel</button>
+																</td>
+														</tr>
+														<tr>
+															<td>Kátia</td>
+															<td>TI</td>
+															<td>Suporte Técnico</td>
+															<td>São Paulo</td>
+															<td>k.macedo</td>
+															<td>001</td>
+															<td class="text-center"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">PDF</button>
+																	<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#removerModal">Excel</button>
+															</td>	
+														</tr>
+														<tr>
+															<td>Carla</td>
+																<td>Diretoria</td>
+																<td>Diretora</td>
+																<td>Recife</td>
+																<td>Car.la</td>
+																<td>001</td>
+																<td class="text-center">
+
+																	<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">PDF</button>
+																	<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#removerModal">Excel</button>
+																</td>
+														</tr>
+													</table>
+												
+													</div>
+												</div>
 									</form>
 							</div>
 						</div>	
