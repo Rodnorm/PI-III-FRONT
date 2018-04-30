@@ -20,6 +20,9 @@
 	<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 	<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
 	<!--PDF -->
+	<!--EXCEL-->
+	
+	<!--EXCEL-->
 	
 </head>
 	
@@ -157,7 +160,8 @@
 															<th class="text-center">Opções</th>
 														</tr>
 													</thead>
-														<tr>
+													<tbody>	
+													<tr>
 															<td>10/10/2015</td>
 															<td>001</td>
 															<td>Venda</td>
@@ -192,12 +196,14 @@
 																	<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#removerModal">Excel</button>
 																</td>
 														</tr>
+													</tbody>
 													</table>
 												
 													</div>
 												</div>
 										<div class="row">
 											<button id="exportButton" class="btn btn-sm btn-danger clearfix"><span class="fa fa-file-pdf-o"></span> Exportar para PDF</button>
+											<button id="btnExport" class="btn btn-sm btn-danger clearfix"><span class="fa fa-file-pdf-o"></span> Exportar para Excel</button>
 										</div>
 									</form>
 							</div>
@@ -210,7 +216,7 @@
 	
 
 	
-	 <script type="text/javascript">
+	<script type="text/javascript">
             $(function () {
                 $("#datetimepicker_de").datetimepicker({
                     defaultDate: "01/01/2018",
@@ -222,11 +228,21 @@
                 });
 				
             });
-            </script>
+            </script> <!--Calendario-->
+			
 	<script>
+		$("#btnExport").click(function (e) {
+			window.open('data:application/vnd.ms-excel,' + $('#exportTable').html());
+			e.preventDefault();
+		});
+		
+	</script> <!--EXCEL-->
+			
+	<script>
+		
     jQuery(function ($) {
         $("#exportButton").click(function () {
-            // parse the HTML table element having an id=exportTable
+            
             var dataSource = shield.DataSource.create({
                 data: "#exportTable",
                 schema: {
@@ -278,7 +294,7 @@
             });
         });
     });
-	</script>
+	</script> <!--PDF-->
 	
 </body>
 </html>
